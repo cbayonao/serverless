@@ -1,13 +1,12 @@
 const pageScraper = require('./pageScraper');
 async function scrapeAll(browserInstance){
     let browser;
-    try{
+    try {
         browser = await browserInstance;
         let scrapedData = {};
-        scrapedData['Travel'] = await pageScraper.scraper(browser, 'Travel');
-        // await pageScraper.scraper(browser);
+        scrapedData['Data'] = await pageScraper.scraper(browser);
         await browser.close();
-        console.log(scrapedData)
+        return scrapedData;
     }
     catch(err){
         console.log("Could not resolve the browser instance => ", err);

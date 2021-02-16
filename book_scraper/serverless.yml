@@ -26,6 +26,7 @@ provider:
   lambdaHashingVersion: 20201221
 
 plugins:
+  - serverless-offline
   - serverless-plugin-include-dependencies
 
 package:
